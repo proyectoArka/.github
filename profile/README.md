@@ -1,4 +1,4 @@
-![diagrama](https://github.com/user-attachments/assets/77143360-19ba-4eb3-8f36-201ae33dcd02)# Arquitectura general del proyecto Arka
+# Arquitectura general del proyecto Arka
 
 Este documento describe de forma general cómo está compuesto el ecosistema de microservicios `Arka`, qué tecnologías utiliza y cómo interactúan los servicios y las bases de datos.
 
@@ -32,6 +32,8 @@ Este documento describe de forma general cómo está compuesto el ecosistema de 
 ---
 
 ## 🏗️ Diagrama de Arquitectura del Ecosistema Arka
+
+![diagrama](https://github.com/user-attachments/assets/77143360-19ba-4eb3-8f36-201ae33dcd02)
 
 ```
 ![Uploading<?xml version="1.0" standalone="no"?>
