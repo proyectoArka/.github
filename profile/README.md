@@ -34,7 +34,7 @@ Este documento describe de forma general cómo está compuesto el ecosistema de 
 ## 🏗️ Diagrama de Arquitectura del Ecosistema Arka
 
 ```
-![Diagrama de Arquitectura del Ecosistema Arka](/images/diagrama.svg)
+![Diagrama de Arquitectura del Ecosistema Arka](/.github/profile/images/diagrama.svg)
 
 
 
