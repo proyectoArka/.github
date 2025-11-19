@@ -35,11 +35,21 @@ Este documento describe de forma general cómo está compuesto el ecosistema de 
 
 ![diagrama](https://github.com/user-attachments/assets/77143360-19ba-4eb3-8f36-201ae33dcd02)
 
-```
+## 🔒 Seguridad en Arka
 
+La plataforma Arka implementa varias capas de seguridad para proteger los datos y las operaciones:
 
+- **Autenticación JWT:** Todos los microservicios protegidos requieren un token JWT válido, emitido por el microservicio MSAuthentication tras login exitoso.
+- **Roles y permisos:** El sistema gestiona roles (admin, cliente, etc.) y permisos granulares para cada endpoint. Los roles se asignan al usuario y se validan en cada petición.
+- **Spring Security:** Cada microservicio utiliza Spring Security para proteger rutas, validar tokens y aplicar reglas de acceso.
+- **Encriptación de contraseñas:** Las contraseñas de los usuarios se almacenan en la base de datos usando algoritmos de hash seguros (BCrypt).
+- **Validación de datos:** Todos los datos recibidos por los endpoints se validan para evitar inyecciones y errores de formato.
+- **CORS y HTTPS:** El gateway y los microservicios están configurados para aceptar peticiones solo desde orígenes permitidos y bajo HTTPS.
+- **Refresh tokens:** El sistema soporta refresh tokens para renovar sesiones de usuario de forma segura sin exponer credenciales.
 
+## 📬 Mensajería y eventos
 
-
-
-
+- **RabbitMQ:** Utilizado como bus de eventos para comunicación asíncrona entre microservicios y para el refresh dinámico de configuración vía Spring Cloud Bus.
+- **Spring Cloud Bus:** Permite que los cambios en la configuración se propaguen automáticamente a todos los servicios conectados.
+- **Eventos de negocio:** Los microservicios pueden publicar y consumir eventos (por ejemplo, creación de orden, actualización de stock, envío de email) para desacoplar procesos y mejorar la escalabilidad.
+- **Notificaciones:** El sistema puede enviar notificaciones internas y externas (por ejemplo, emails mediante LambdaEmail y Brevo) en respuesta a eventos clave.
